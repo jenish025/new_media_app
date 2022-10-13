@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "media_player_app",
-    "slug": "media_player_app",
+    "name": "media_app",
+    "slug": "media_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
