@@ -1,0 +1,3 @@
+export const FILE_DATA = "FILE_DATA"
+export const FILE_DATA_VIDEO = "FILE_DATA_VIDEO"
+export const FILE_DATA_AUDIO = "FILE_DATA_AUDIO"
