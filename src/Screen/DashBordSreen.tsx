@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -16,19 +22,21 @@ const DashBordSreen = (props: any) => {
     props.navigation.navigate('videoscreen', { file: file });
   };
   return (
-    <View>
-      {props?.videoFile?.assets.map((file: any, index: number) => {
-        return (
-          <TouchableOpacity
-            style={styles.container}
-            key={index}
-            onPress={() => handleVideoFile(file)}>
-            <Text>{file?.filename}</Text>
-            <Text></Text>
-          </TouchableOpacity>
-        );
-      })}
-    </View>
+    <ScrollView>
+      <View>
+        {props?.videoFile?.assets.map((file: any, index: number) => {
+          return (
+            <TouchableOpacity
+              style={styles.container}
+              key={index}
+              onPress={() => handleVideoFile(file)}>
+              <Text>{file?.filename}</Text>
+              <Text></Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    </ScrollView>
   );
 };
 
