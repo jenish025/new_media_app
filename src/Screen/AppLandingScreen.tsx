@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  PermissionsAndroid,
-  Platform,
-  Alert,
-} from 'react-native';
+import { StyleSheet, Text, Alert } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Height, Width } from '../Componets/DeviceDimensions';
@@ -14,10 +8,9 @@ import {
   FileVideoListData,
 } from '../Redux/Action/AllAction';
 import * as MediaLibrary from 'expo-media-library';
+import { i18n } from '../Translate/Index';
 
 const AppLandingScreen = (props: any) => {
- 
-
   const permissionAlertBox = () => {
     Alert.alert(
       'Permission Required',
@@ -41,7 +34,7 @@ const AppLandingScreen = (props: any) => {
       first: 500,
     });
 
-    console.log(videoMedia)
+    // console.log(videoMedia)
 
     props.videoFileList(videoMedia);
 
@@ -66,7 +59,7 @@ const AppLandingScreen = (props: any) => {
     if (permission.granted) {
       getMediaFiles();
       setTimeout(() => {
-        props.navigation.navigate('dashbordscreen');
+        props.navigation.replace('dashbordscreen');
       }, 2000);
     }
 
@@ -81,7 +74,7 @@ const AppLandingScreen = (props: any) => {
       if (status === 'granted') {
         getMediaFiles();
         setTimeout(() => {
-          props.navigation.navigate('dashbordscreen');
+          props.navigation.replace('dashbordscreen');
         }, 2000);
       }
       if (status === 'granted' && !canAskAgain) {
@@ -97,7 +90,7 @@ const AppLandingScreen = (props: any) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Media App</Text>
+      <Text>{i18n.t('appName')}</Text>
     </SafeAreaView>
   );
 };

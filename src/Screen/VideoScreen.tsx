@@ -10,14 +10,14 @@ const VideoScreen = (props: any) => {
   const [status, setStatus] = React.useState({});
   // const video = React.useRef(null);
 
-  console.log(file, 'ads');
+  // console.log(file, 'ads');
   return (
     <View style={styles.container}>
       <Video
-      style={styles.video}
+        style={styles.video}
         useNativeControls={true}
         source={{
-          uri: file?.uri
+          uri: file?.uri,
         }}
         rate={1.0}
         volume={1.0}
